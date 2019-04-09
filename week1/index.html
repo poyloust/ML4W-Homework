@@ -12,63 +12,54 @@
                 color: gold;
                 text-align: center;
             }
+            video{
+                margin: 50px;
+            }
             #mycanvas{
                 border: 5px solid yellow;
                 padding: 20px;
                 margin-top: 10px;
-                float: left;
                 display: inline-block;
             }
             #d1{
-                float: left;
                 display: inline-block; 
-            }
-            .btn button{
-                border: none;
-                padding: 15px;
-                font-size: 16px;
-                color: blueviolet;
-                background-color: antiquewhite;
-                margin: 20px;
-            }
-         
-            .btn button:hover{
-                background-color:darkblue;
-                color: yellow;
+                float: left;
             }
             #result, #probability{
                 font-size: 24px;
                 font-style: italic;
                 color: white;
+                float: left;
+                width: 100%;
             }
        
             #lowPossibility{
+                float: left;
                 display: none;
-                width: 20%;
-                height: 80px;
-                padding: 25px;
+                padding: 420px 700px;
                 text-align: center;
                 position: absolute;
-                top:90%;
-                left: 40%;
+                left: 0;
+                top: 10px;
                 border: 2px solid yellow;
-                background-color: rgb(9, 5, 228);
+                background-color: yellow;
+            }
+            #lowPossibility p{
+                text-align: center;
+                font-size: 30px;
+                color:rgb(9, 5, 228);
             }
     </style>
 </head>
 <body>
-    
+    <div><h1>This looks like...</h1></div>
     <p><span id="result">??prediction??</span><br/><span id="probability">%%%%</span></p>
-   
-    <div id="d1">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel commodo purus. Mauris imperdiet elit sed libero sagittis dignissim. Pellentesque ultrices sodales erat, nec faucibus augue fringilla sit amet. Quisque tellus justo, adipiscing quis ultricies non, laoreet at lacus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut sodales felis vel massa hendrerit ultricies. Curabitur in ligula nisi. Integer ultrices nunc et orci venenatis venenatis.
-    </div>
+
      <div class="btns">
-        <button onclick="getCanvas()">Save Data</button>
-        <button onclick="showImg()">Show IMG</button>
+       
     </div>
     
-    <script src="sketch.js"></script>
+    <script src="script.js"></script>
     <div id="lowPossibility">
        <p>A masterpiece of abstractionism！</p> 
        

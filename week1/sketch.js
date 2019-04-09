@@ -7,7 +7,8 @@ var importedImg;
 // preload picture also won't work
 
 function preload(){
-  importedImg = loadImage('bird.jpg');
+  //importedImg = createImg('bird.jpg');
+  classifier = ml5.imageClassifier('MobileNet', modelReady);
 }
 
 //setup canvas for drawing
@@ -36,28 +37,15 @@ function getCanvas(){
 
 function modelReady() {
   console.log('our model is ready!');
-  classifier.predict(gotResult);
 }
-function gotResult(err, results) {
-  if (results) {
-    console.log('results: ', results);
-    select('#result').html(results[0].className);
-    select('#probability').html(results[0].probability);
-    classifier.predict(gotResult);
-  }
-}
-
-// load the image
 
 function showImg(){
 
-  image(importedImg, 0,0);
+  // image(importedImg, 0,0);
+  // console.log(importedImg);
 
 
-  // I can't use loadImage(dataUrl) directly here, not sure why
-  // this is a method I found online that could successfully load the image from url
-  
-  /*  load image from canvas
+  // load image from canvas
 
   image(img,0,0,600,600);
   var raw = new Image();
@@ -67,10 +55,19 @@ function showImg(){
     img.drawingContext.drawImage(raw, 0, 0);
     image(img, 0, 0); 
   } 
-  */
 
-  classifier = ml5.imageClassifier('MobileNet',importedImg, modelReady);
+
+ classifier.predict(img, gotResult);
 }
+
+function gotResult(err, results) {
+  if (results) {
+    console.log('results: ', results);
+    select('#result').html(results[0].className);
+    select('#probability').html(results[0].probability);
+  }
+}
+
 
 function showTexts(){
   var probability = document.getElementById("probability");
