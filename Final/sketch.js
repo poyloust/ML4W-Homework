@@ -27,7 +27,7 @@ function setup() {
   resultImg = createImg('');
   resultImg.hide();
   style1 = ml5.styleTransfer('models/picassoModel', video, modelALoaded);
-  style2 = ml5.styleTransfer('models/awModel', video, modelBLoaded);
+  style2 = ml5.styleTransfer('models/vangoghModel', video, modelBLoaded);
 }
 
 function draw() {
